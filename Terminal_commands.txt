@@ -1,0 +1,50 @@
+ДЗ до вторника (01.06.2021)
+Linux terminal
+Вот сценарий который надо уметь делать
+
+1. Посмотреть где я --- pwd
+2. Создать папку --- mkdir test
+3. Зайти папку --- cd test
+4. Создать три папки --- mkdir test1 test2 test3
+5. Зайти в любоую папку --- cd test1
+6. Создать 5 файлов (3 txt, 2 json) ---- touch file1.txt file2.txt file3.txt touch file4.json file5.json
+7. Создать 3 папки --- mkdir {one,two,three}
+8. Вывести список содержимого папки --- ls -la 
+9. + Открыть любой txt файл --- cd test1 cat file1.txt или vim test1
+10.+ написать туда что-нибудь, любой текст --- echo "new line" >> file1.txt или vim file1.txt i new line 
+11.+ сохранить и выйти --- esc :wq
+12.Выйти из папки на уровень выше --- cd ..
+—
+13. Переместить любые 2 файла, которые вы создали, в любую другую папку ---  mv two test1 cd test1 mv file1.txt file2.txt two
+14. Скопировать любые 2 файла, которые вы создали, в любую другую папку --- cp file3.txt file4.json two
+15. Найти файл по имени --- find . -name "file1.txt"
+16. Просмотреть содержимое в реальном времени (команда grep) изучите как она работае --- grep -i 'new' file1.txt 
+17. Вывести несколько первых строк из текстового файла --- head -n2 file1.txt
+18. Вывести несколько последних строк из текстового файла --- tail -2 file1.txt, tail -f file1.txt
+19. Просмотреть содержимое длинного файла (команда less) изучите как она работает --- cd test1 less file3.txt
+20) Вывести дату и время --- date
+
+=========
+
+Задание *
+1. Отправить http запрос на сервер. 
+
+curl --x POST https://api.quarantine.country/api/v1/regions
+
+2. Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13 
+Создать тексовый документ написать команды из пунктов:
+
+#!/bin/bash 
+cd test
+mkdir test1 test2 test3
+cd test1
+touch file1.txt file2.txt file3.txt
+touch file4.json file5.json
+cd .. 
+mkdir {one,two,three}
+cd test1
+vim test1
+cd .. 
+mv two test1 cd test1 
+mv file1.txt file2.txt two
+Изменить расширение файла на .sh
